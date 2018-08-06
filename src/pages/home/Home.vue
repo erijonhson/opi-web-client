@@ -9,9 +9,7 @@
       <schedule></schedule>
       <results></results>
     </div>
-    <div class="uk-container uk-container-small uk-position-relative">
-      <contact></contact>
-    </div>
+    <contact></contact>
   </div>
 </template>
 

@@ -1,4 +1,4 @@
-# strange-things
+# opi-web-client
 
 > A Vue.js project
 

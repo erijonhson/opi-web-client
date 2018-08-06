@@ -20,7 +20,6 @@
     "vue-extend-layout": "^1.0.1",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
-    "vue-toastr": "^2.0.12",
     "vuetable-2": "^1.7.5"
   },
   "devDependencies": {

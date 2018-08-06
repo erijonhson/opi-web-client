@@ -27,7 +27,7 @@ Vue.router = new Router({
       name: 'opiHome',
       component: () => import('@/pages/home/Home'),
       meta: {
-        layout: 'basic',
+        layout: 'default',
         auth: false
       }
     }
@@ -35,16 +35,16 @@ Vue.router = new Router({
 })
 
 Vue.use(require('@websanova/vue-auth'), {
-  auth: require('@websanova/vue-auth/drivers/auth/basic.js'),
+  auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
   http: require('@websanova/vue-auth/drivers/http/vue-resource.1.x.js'),
   router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
   loginData: {url: 'api/delegates/login', method: 'POST', fetchUser: false},
   fetchData: {enabled: false},
   refreshData: {enabled: false},
   tokenStore: ['localStorage'],
-//  notFoundRedirect: {path: '/path'},
-  authRedirect: {path: '/users/login'},
-//  forbiddenRedirect: {path: '/403'}
+  // notFoundRedirect: {path: '/path'},
+  authRedirect: {path: '/users/login'}
+  // forbiddenRedirect: {path: '/403'}
 })
 
 // autorization
