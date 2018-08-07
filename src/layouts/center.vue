@@ -1,8 +1,10 @@
 <template>
-  <div id="basic">
+  <div>
     <topmenu></topmenu>
     <div id="app-body" class="app-body">
-      <router-view></router-view>
+      <div class="uk-position-center uk-overlay uk-overlay-default">
+        <router-view></router-view>
+      </div>
     </div>
     <assignfooter></assignfooter>
   </div>
@@ -13,17 +15,11 @@ import Topmenu from '@/components/topmenu'
 import Assignfooter from '@/components/assignfooter'
 
 export default {
-  name: 'default',
+  name: 'center',
   components: {Assignfooter, Topmenu}
 }
 </script>
 
 <style lang="scss">
   @import 'src/assets/app';
-
-  #basic {
-    min-height:100%;
-    position:relative;
-    height:100%;
-  }
 </style>

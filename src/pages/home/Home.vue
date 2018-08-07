@@ -1,11 +1,9 @@
 <template>
   <div>
     <logo></logo>
-    <div class="uk-container uk-container-small uk-position-relative">
+    <div class="uk-container uk-container-medium uk-position-relative">
       <goals></goals>
       <categories></categories>
-    </div>
-    <div class="uk-container uk-container-large uk-position-relative">
       <schedule></schedule>
       <results></results>
     </div>
@@ -17,7 +15,7 @@
 import Categories from '@/pages/home/categories'
 import Contact from '@/pages/home/contact'
 import Goals from '@/pages/home/goals'
-import Logo from '@/pages/home/logo'
+import Logo from '@/components/logo'
 import Results from '@/pages/home/results'
 import Schedule from '@/pages/home/schedule'
 
@@ -31,8 +29,8 @@ export default {
   p {
     color: #111;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1em;
+    line-height: 1.8em;
     margin: 0 0 0px;
     text-align: justify;
   }

@@ -1,6 +1,6 @@
 <template>
   <section id="contact">
-    <div class="uk-container uk-container-small uk-position-relative">
+    <div class="uk-container uk-container-medium uk-position-relative">
       <h1 class="section-title">Contato</h1>
       <div class="gmap-area">
         <div>
@@ -10,7 +10,8 @@
                 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=DSC - UFCG,+Campina+Grande&amp;aq=0&amp;oq=joomshaper&amp;sll=-7.2135589,-35.9066347&amp;sspn=42.766543,80.332031&amp;ie=UTF8&amp;hq=JoomShaper,&amp;hnear=UFCG,+ DSC&amp;ll=-7.2135589,-35.9066347&amp;spn=-7.2135589,-35.9066347&amp;t=m&amp;z=14&amp;iwloc=A&amp&amp;output=embed"></iframe>
               </div>
             </div>
-            <center><br>
+            <center>
+              <br>
               <span>
                 <i uk-icon="mail"></i>
                 <a href="mailto:opi@dsc.ufcg.edu.br">opi@dsc.ufcg.edu.br</a>
@@ -18,7 +19,7 @@
               <br>
               <span>
                 <i uk-icon="receiver"></i>
-                  +55 (83) 2101-1122 (Prof. 
+                  +55 (83) 2101-1122 (Prof.
                   <a href="http://www.dsc.ufcg.edu.br/~rohit/Rohit_Gheyi/Home.html" target="_blank">Rohit Gheyi</a>).
               </span>
               <br><br>
@@ -40,6 +41,7 @@
   #contact {
     @extend %section-padding;
     background: linear-gradient(to top, #999999, #ffffff);
+    padding-bottom: 4vh;
   }
 
   .gmap-area {

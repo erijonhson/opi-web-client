@@ -14,7 +14,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@websanova/vue-auth": "^2.21.14-beta",
     "vue": "^2.5.2",
     "vue-events": "^3.1.0",
     "vue-extend-layout": "^1.0.1",
