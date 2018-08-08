@@ -14,13 +14,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@websanova/vue-auth": "^2.21.14-beta",
     "vue": "^2.5.2",
+    "vue-axios": "^2.1.1",
     "vue-events": "^3.1.0",
     "vue-extend-layout": "^1.0.1",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
-    "vue-toastr": "^2.0.12",
     "vuetable-2": "^1.7.5"
   },
   "devDependencies": {

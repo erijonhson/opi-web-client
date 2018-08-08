@@ -3,12 +3,10 @@
 import Vue from 'vue'
 import router from './router'
 import { VueExtendLayout, layout } from 'vue-extend-layout'
-import Toastr from 'vue-toastr'
 
 Vue.config.productionTip = false
 
 Vue.use(VueExtendLayout)
-Vue.use(Toastr)
 
 /* eslint-disable no-new */
 new Vue({

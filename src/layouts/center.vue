@@ -2,10 +2,11 @@
   <div>
     <topmenu></topmenu>
     <div id="app-body" class="app-body">
-        <main class="main">
-            <router-view></router-view>
-        </main>
+      <div class="uk-position-center uk-overlay uk-overlay-default">
+        <router-view></router-view>
+      </div>
     </div>
+    <assignfooter></assignfooter>
   </div>
 </template>
 
@@ -14,12 +15,8 @@ import Topmenu from '@/components/topmenu'
 import Assignfooter from '@/components/assignfooter'
 
 export default {
-  name: 'basic',
-  components: {Assignfooter, Topmenu},
-  created () {
-  },
-  data () {
-  }
+  name: 'center',
+  components: {Assignfooter, Topmenu}
 }
 </script>
 

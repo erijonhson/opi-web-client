@@ -1,18 +1,13 @@
-/**
- * Copyright (C) 2018 Embedded Systems and Pervasive Computing Lab - UFCG
- * All rights reserved.
- */
-
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
-import LoginService from '@/services/login'
+import { getRoleUser, logout } from '@/services/authentication'
 
 Vue.use(Router)
 
 Vue.use(VueResource)
-Vue.http.options.root = 'http://localhost:5000/OpiRestApi/'
+Vue.http.options.root = 'http://localhost:5000/api/admins/login' // 'https://opi-server.herokuapp.com'
 
 Vue.router = new Router({
   mode: 'history',
@@ -27,30 +22,33 @@ Vue.router = new Router({
       name: 'opiHome',
       component: () => import('@/pages/home/Home'),
       meta: {
-        layout: 'basic',
+        layout: 'default',
+        auth: false
+      }
+    },
+    {
+      path: '/login',
+      name: 'opiLogin',
+      component: () => import('@/pages/authentication/Login'),
+      meta: {
+        layout: 'center',
         auth: false
       }
     }
-  ]
-})
-
-Vue.use(require('@websanova/vue-auth'), {
-  auth: require('@websanova/vue-auth/drivers/auth/basic.js'),
-  http: require('@websanova/vue-auth/drivers/http/vue-resource.1.x.js'),
-  router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
-  loginData: {url: 'api/delegates/login', method: 'POST', fetchUser: false},
-  fetchData: {enabled: false},
-  refreshData: {enabled: false},
-  tokenStore: ['localStorage'],
-//  notFoundRedirect: {path: '/path'},
-  authRedirect: {path: '/users/login'},
-//  forbiddenRedirect: {path: '/403'}
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
 })
 
 // autorization
 Vue.router.beforeEach((to, from, next) => {
   if (to.meta.auth) {
-    const roles = LoginService.getRoleUser()
+    const roles = getRoleUser()
     const rolesUser = roles instanceof Array ? roles : [roles]
     if (!rolesUser) {
       next('/users/login')
@@ -65,7 +63,8 @@ Vue.router.beforeEach((to, from, next) => {
       if (authorized) {
         next()
       } else {
-        LoginService.logout()
+        logout()
+        next('/403')
       }
     }
   } else {
