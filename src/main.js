@@ -9,11 +9,9 @@ Vue.config.productionTip = false
 Vue.use(VueExtendLayout)
 
 /* eslint-disable no-new */
-var vm = new Vue({
+new Vue({
   el: '#app',
   router,
   ...layout,
   perPage: 10
 })
-
-export default vm

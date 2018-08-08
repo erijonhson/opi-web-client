@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
-import {getRoleUser, logout} from '@/services/authentication/'
+import { getRoleUser, logout } from '@/services/authentication'
 
 Vue.use(Router)
 
 Vue.use(VueResource)
-Vue.http.options.root = 'http://localhost:5000/OpiRestApi/'
+Vue.http.options.root = 'http://localhost:5000/OpiRestApi'
 
 Vue.router = new Router({
   mode: 'history',
@@ -64,6 +64,7 @@ Vue.router.beforeEach((to, from, next) => {
         next()
       } else {
         logout()
+        next('/403')
       }
     }
   } else {

@@ -33,19 +33,26 @@ import { login, setRoleUser } from '@/services/authentication'
 export default {
   name: 'Login',
   components: { Logo },
-  data: () => ({
-    user: {}
-  }),
+  data () {
+    return {
+      user: {
+        email: null,
+        password: null
+      }
+    }
+  },
   methods: {
-    submitLogin: (e) => {
+    submitLogin: function (e) {
       e.preventDefault()
-      alert(this.user)
+      alert(this.$data)
+      console.log(this.$data)
       login(this.user).then(response => {
         UIkit.notification('Bem vindo', 'success')
         setRoleUser(response.data.role)
       }).catch(err => {
         let msgError = 'Verique sua conexão com a internet'
-        if (response.status >= 400 && response.status <= 499) {
+        console.log(err)
+        if (err.status >= 400 && response.status <= 499) {
           msgError = 'Login e/ou senha inválidos'
         }
         UIkit.notification(msgError, 'danger')

@@ -1,7 +1,7 @@
-import server from './http'
+import http from './http'
 
 export function login (user) {
-  return server.post('/users/login', user)
+  return http.server.post(`${http.baseUrl}/users/login`, user)
 }
 
 export function setToken (token) {
