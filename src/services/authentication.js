@@ -1,7 +1,9 @@
-import http from './http'
+import { baseUrl } from './http'
+import Vue from 'vue'
 
 export function login (user) {
-  return http.server.post(`${http.baseUrl}/users/login`, user)
+  console.log(user)
+  return Vue.http.post(`${baseUrl}/admins/login`, user)
 }
 
 export function setToken (token) {

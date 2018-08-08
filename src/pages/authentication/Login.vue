@@ -8,7 +8,7 @@
         <div class="uk-margin">
           <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
-            <input v-model="user.email" class="uk-input uk-form-width-large" type="text">
+            <input v-model="user.username" class="uk-input uk-form-width-large" type="text">
           </div>
         </div>
         <div class="uk-margin">
@@ -36,7 +36,7 @@ export default {
   data () {
     return {
       user: {
-        email: null,
+        username: null,
         password: null
       }
     }
@@ -44,14 +44,13 @@ export default {
   methods: {
     submitLogin: function (e) {
       e.preventDefault()
-      alert(this.$data)
-      console.log(this.$data)
-      login(this.user).then(response => {
+      login(this.$data.user).then(function (response) {
+        console.log('teste')
+        console.log(response)
         UIkit.notification('Bem vindo', 'success')
         setRoleUser(response.data.role)
       }).catch(err => {
         let msgError = 'Verique sua conexão com a internet'
-        console.log(err)
         if (err.status >= 400 && response.status <= 499) {
           msgError = 'Login e/ou senha inválidos'
         }

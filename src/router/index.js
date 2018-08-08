@@ -7,7 +7,7 @@ import { getRoleUser, logout } from '@/services/authentication'
 Vue.use(Router)
 
 Vue.use(VueResource)
-Vue.http.options.root = 'http://localhost:5000/OpiRestApi'
+Vue.http.options.root = 'http://localhost:5000/api/admins/login' // 'https://opi-server.herokuapp.com'
 
 Vue.router = new Router({
   mode: 'history',
